@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BixViagens</string>
+    <string name="saopaulo">Sao Paulo</string>
+    <string name="dias">2 Dias</string>
+    <string name="preco">R$ 243,99</string>
+    <string name="especiais">Especiais</string>
+    <string name="pais">Brasil</string>
+    <string name="conteudo_banner_inicial">banner inicial da app</string>
+</resources>

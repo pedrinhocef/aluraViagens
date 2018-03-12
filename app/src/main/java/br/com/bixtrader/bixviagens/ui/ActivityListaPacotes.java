@@ -1,5 +1,6 @@
 package br.com.bixtrader.bixviagens.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -10,6 +11,7 @@ import br.com.bixtrader.bixviagens.R;
 import br.com.bixtrader.bixviagens.adapter.ListaPacoteAdapter;
 import br.com.bixtrader.bixviagens.dao.PacoteDAO;
 import br.com.bixtrader.bixviagens.model.Pacote;
+import br.com.bixtrader.bixviagens.ui.activity.ResumoPacoteActivity;
 
 public class ActivityListaPacotes extends AppCompatActivity {
 

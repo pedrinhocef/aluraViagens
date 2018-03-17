@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import br.com.bixtrader.bixviagens.R;
 import br.com.bixtrader.bixviagens.model.Pacote;
@@ -20,6 +22,7 @@ public class ResumoPacoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_pacote);
+        setTitle("Resumo do pacote");
 
         Pacote pacoteSaoPaulo = new Pacote("Sao Paulo", "sao_paulo_sp",
                 2, new BigDecimal("243.99"));
@@ -40,5 +43,16 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         String moedaBrasileira = MoedaUtil
                 .formataParaBrasileiro(pacoteSaoPaulo.getPreco());
         preco.setText(moedaBrasileira);
+
+        TextView data = findViewById(R.id.resumo_pacote_data);
+        Calendar dataDeIda = Calendar.getInstance();
+        Calendar dataDeVolta = Calendar.getInstance();
+        dataDeVolta.add(Calendar.DATE, pacoteSaoPaulo.getDias());
+        SimpleDateFormat formatoBrasileiro = new SimpleDateFormat("dd/MM");
+        String dataFormatadaIda = formatoBrasileiro.format(dataDeIda.getTime());
+        String dataFormatadaVolta = formatoBrasileiro.format(dataDeVolta.getTime());
+        String dataFormatadaDaViagem = dataFormatadaIda + " - "
+                + dataFormatadaVolta + " de " + dataDeVolta.get(Calendar.YEAR);
+        data.setText(dataFormatadaDaViagem);
     }
 }

@@ -6,4 +6,6 @@
     <string name="especiais">Especiais</string>
     <string name="pais">Brasil</string>
     <string name="conteudo_banner_inicial">banner inicial da app</string>
+    <string name="realizar_pagamento">Realizar pagamento</string>
+    <string name="preco_final">Preço Final:</string>
 </resources>

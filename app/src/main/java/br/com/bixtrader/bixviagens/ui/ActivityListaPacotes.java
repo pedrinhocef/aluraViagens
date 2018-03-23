@@ -11,6 +11,7 @@ import br.com.bixtrader.bixviagens.R;
 import br.com.bixtrader.bixviagens.adapter.ListaPacoteAdapter;
 import br.com.bixtrader.bixviagens.dao.PacoteDAO;
 import br.com.bixtrader.bixviagens.model.Pacote;
+import br.com.bixtrader.bixviagens.ui.activity.PagamentoActivity;
 import br.com.bixtrader.bixviagens.ui.activity.ResumoPacoteActivity;
 
 public class ActivityListaPacotes extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class ActivityListaPacotes extends AppCompatActivity {
 
         setTitle(TITLE_APPBAR);
         configuraLista();
-        Intent intent = new Intent(this, ResumoPacoteActivity.class);
+        Intent intent = new Intent(this, PagamentoActivity.class);
         startActivity(intent);
 
     }

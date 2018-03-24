@@ -4,6 +4,7 @@ Curso divido em 3 partes.
 # Desenvolvido com
 - Java
 - Constraint Layout
+- Clean-code
 # link do curso  
 https://cursos.alura.com.br/course/layout-android-2
 # Certificados Alura

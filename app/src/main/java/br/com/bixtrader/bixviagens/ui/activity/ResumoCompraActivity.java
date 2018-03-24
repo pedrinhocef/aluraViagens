@@ -1,12 +1,11 @@
 package br.com.bixtrader.bixviagens.ui.activity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.math.BigDecimal;
 
 import br.com.bixtrader.bixviagens.R;
 import br.com.bixtrader.bixviagens.model.Pacote;
@@ -22,17 +21,26 @@ public class ResumoCompraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_compra);
-
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         setTitle(RESUMO_DA_COMPRA);
+        pacoteRecebido();
+    }
 
-        Pacote pacoteSaoPaulo = new Pacote("Sao Paulo", "sao_paulo_sp",
-                2, new BigDecimal("243.99"));
+    private void pacoteRecebido() {
+        Intent intent = getIntent();
+        if (intent.hasExtra("pacote")){
+            Pacote pacote = (Pacote) intent.getSerializableExtra("pacote");
+            inicializaCampos(pacote);
+        }
+    }
 
-        mostraLocal(pacoteSaoPaulo);
-        mostraImagem(pacoteSaoPaulo);
-        mostraData(pacoteSaoPaulo);
-        mostraPreco(pacoteSaoPaulo);
-
+    private void inicializaCampos(Pacote pacote) {
+        mostraLocal(pacote);
+        mostraImagem(pacote);
+        mostraData(pacote);
+        mostraPreco(pacote);
     }
 
     private void mostraPreco(Pacote pacote) {
